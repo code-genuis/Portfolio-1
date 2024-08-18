@@ -1,3 +1,13 @@
+// disabled right click
+document.addEventListener(
+  "contextmenu",
+  function (e) {
+    e.preventDefault();
+  },
+  false
+);
+
+
 // toggle icon navbar
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
@@ -42,13 +52,13 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
-// window.addEventListener('scroll', () => {
-//     const metaTag = document.querySelector('meta[name="theme-color"]');
-//     if (window.scrollY / window.innerHeight > 0.8) {
-//         metaTag.setAttribute("content", "#00aba0");
-//     }
-//     else {
-//         metaTag.setAttribute("content", "#00aba0");
-//     }
+window.addEventListener('scroll', () => {
+    const metaTag = document.querySelector('meta["name="theme-color"]');
+    if (window.scrollY / window.innerHeight > 0.8) {
+        metaTag.setAttribute("content", "#00aba0");
+    }
+    else {
+        metaTag.setAttribute("content", "#595959");
+    }
 
-// }, false);
+}, false);
